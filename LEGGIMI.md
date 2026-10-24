@@ -27,7 +27,9 @@ Indirizzo della guida seguito da `#/cartello` (es. https://rabanus.it/guida/#/ca
 
 ## Pubblicazione
 
-Sono file statici: si caricano così come sono (tutti i file di questa cartella) sul proprio spazio web, via FTP o dal pannello dell'hosting, in una cartella o in un sottodominio (es. `guida.tuodominio.it`). Serve HTTPS per l'installazione come app e per l'uso offline.
+La guida è pubblicata con GitHub Pages dal ramo `main` di questo repository: ogni modifica caricata su GitHub va online da sola in un paio di minuti. I contenuti invece arrivano direttamente dal foglio, senza bisogno di ripubblicare.
+
+Indirizzo: https://freelense86.github.io/rabanus-guida/ (poi guida.rabanus.it, con un record DNS CNAME `guida` → `freelense86.github.io` e il file `CNAME` nel repository).
 
 L'ID del foglio è in `config.js`. Senza ID la guida mostra i contenuti di `esempio.json`.
 
