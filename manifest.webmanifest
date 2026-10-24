@@ -1,0 +1,12 @@
+{
+  "name": "Guida per gli ospiti",
+  "short_name": "Guida",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5ece0",
+  "theme_color": "#f5ece0",
+  "icons": [
+    { "src": "icona.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}

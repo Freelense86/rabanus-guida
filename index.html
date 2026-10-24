@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Guida per gli ospiti</title>
+  <meta name="theme-color" content="#f5ece0">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icona.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icona.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="stile.css">
+</head>
+<body>
+  <main id="app" aria-live="polite"><div class="caricamento"></div></main>
+  <div id="stampa"></div>
+
+  <dialog id="scelta-lingua">
+    <form method="dialog">
+      <h2 id="titolo-lingua"></h2>
+      <div id="elenco-lingue"></div>
+    </form>
+  </dialog>
+
+  <div id="avviso" role="status"></div>
+
+  <script src="config.js"></script>
+  <script src="lingue.js"></script>
+  <script src="icone.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
