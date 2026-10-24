@@ -7,6 +7,9 @@
   --tenue: #7b7367;
   --accento: #c2553d;
   --raggio: 999px;
+  --raggio-schede: 22px;
+  --font-titoli: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-testo: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
   --ombra: 0 1px 2px rgba(63, 94, 79, .06);
   color-scheme: light;
 }
@@ -17,11 +20,14 @@ body {
   margin: 0;
   background: var(--fondo);
   color: var(--testo);
-  font: 16px/1.55 "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  font: 16px/1.55 var(--font-testo);
   -webkit-font-smoothing: antialiased;
 }
 a { color: var(--accento); }
 button { font: inherit; }
+h1, h2, h3, .occhiello, .chip, .pulsante, .pillola, .voce-lingua { font-family: var(--font-titoli); }
+.logo { display: block; max-width: 60%; max-height: 90px; margin: 0 auto 16px; object-fit: contain; }
+.una-colonna .griglia { grid-template-columns: 1fr; }
 
 #app {
   max-width: 760px;
@@ -45,7 +51,7 @@ button { font: inherit; }
   display: flex; flex-direction: column; justify-content: flex-end;
   background: linear-gradient(to bottom, rgba(0,0,0,.05) 30%, rgba(0,0,0,.6)), var(--foto) center / cover;
   color: #fff;
-  border-radius: 0 0 28px 28px;
+  border-radius: 0 0 var(--raggio-schede) var(--raggio-schede);
 }
 .copertina.con-foto h1, .copertina.con-foto .occhiello, .copertina.con-foto .localita, .copertina.con-foto .localita .ico { color: #fff; }
 .in-alto { display: flex; justify-content: flex-end; margin-bottom: 24px; }
@@ -112,7 +118,7 @@ button { font: inherit; }
 .contatti-rapidi { display: flex; gap: 12px; }
 .tondo {
   display: grid; place-items: center;
-  width: 52px; height: 52px; border-radius: 50%;
+  width: 52px; height: 52px; border-radius: var(--raggio-bollo, 50%);
   background: var(--carta); border: 1px solid var(--bordo);
 }
 .tondo .ico { width: 22px; height: 22px; }
@@ -122,7 +128,7 @@ button { font: inherit; }
 .titolo-sezione { display: flex; align-items: center; gap: 14px; margin-bottom: 18px; }
 .bollo {
   display: grid; place-items: center; flex: none;
-  width: 52px; height: 52px; border-radius: 50%;
+  width: 52px; height: 52px; border-radius: var(--raggio-bollo, 50%);
   background: var(--carta); border: 1px solid var(--bordo);
 }
 .bollo .ico { width: 24px; height: 24px; }
@@ -136,7 +142,7 @@ button { font: inherit; }
 
 .scheda {
   margin-top: 20px; padding: 6px 18px;
-  background: var(--carta); border: 1px solid var(--bordo); border-radius: 22px;
+  background: var(--carta); border: 1px solid var(--bordo); border-radius: var(--raggio-schede);
 }
 .scheda > .pulsante { margin: 4px 0 14px; width: 100%; }
 .riga-copia { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 0; }
@@ -150,7 +156,7 @@ button { font: inherit; }
 .luoghi { list-style: none; margin: 24px 0 0; padding: 0; display: grid; gap: 12px; }
 .luogo {
   padding: 18px 18px 16px;
-  background: var(--carta); border: 1px solid var(--bordo); border-radius: 22px;
+  background: var(--carta); border: 1px solid var(--bordo); border-radius: var(--raggio-schede);
 }
 .luogo h3 { margin: 0; font-size: 17px; color: var(--verde); }
 .luogo .dove { margin: 2px 0 8px; color: var(--tenue); font-size: 14px; }
@@ -185,7 +191,7 @@ dialog h2 { margin: 0 0 14px; color: var(--verde); font-size: 20px; }
 .voce-lingua {
   display: flex; justify-content: space-between; align-items: center; gap: 6px;
   padding: 11px 14px;
-  background: var(--carta); border: 1px solid var(--bordo); border-radius: 14px;
+  background: var(--carta); border: 1px solid var(--bordo); border-radius: min(14px, var(--raggio-schede));
   color: var(--verde); font-weight: 600; text-align: left; cursor: pointer;
 }
 .voce-lingua small { color: var(--tenue); font-weight: 500; }
@@ -223,4 +229,28 @@ dialog h2 { margin: 0 0 14px; color: var(--verde); font-size: 20px; }
   .st-luogo h3 { margin: 0; font-size: 12pt; color: var(--verde); }
   .st-luogo .dove { color: var(--tenue); font-size: 10pt; }
   * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+
+/* ---- cartello per la camera (#/cartello) ---- */
+.cartello {
+  max-width: 520px; margin: 0 auto; padding: 36px 28px 28px;
+  background: var(--carta); border: 1px solid var(--bordo); border-radius: var(--raggio-schede);
+  text-align: center;
+}
+.cartello h1 { margin: 0 0 24px; font-size: 34px; line-height: 1.1; color: var(--verde); }
+#cartello-qr { display: inline-block; padding: 12px; background: #fff; border-radius: 12px; }
+#cartello-qr img, #cartello-qr canvas { display: block; width: 220px; height: 220px; }
+.saluti { list-style: none; margin: 18px 0 22px; padding: 0; color: var(--tenue); font-size: 14px; line-height: 1.7; }
+.cartello-wifi {
+  display: inline-flex; gap: 14px; align-items: center; text-align: left;
+  padding: 14px 20px; background: var(--fondo); border-radius: var(--raggio-schede);
+}
+.cartello-wifi .ico { width: 30px; height: 30px; }
+.cartello-wifi small { display: block; color: var(--tenue); font-size: 12px; }
+.cartello-wifi strong { display: block; color: var(--verde); font-size: 17px; margin-bottom: 4px; }
+.cartello-link { margin: 18px 0 0; color: var(--accento); font-weight: 600; }
+@media print {
+  body.pagina-cartello #app { display: block !important; padding: 0; min-height: 0; }
+  body.pagina-cartello #stampa, .non-stampare { display: none !important; }
+  body.pagina-cartello .cartello { border: 0; margin-top: 20mm; }
 }

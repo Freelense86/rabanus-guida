@@ -1,4 +1,4 @@
-# Guida per gli ospiti del B&B
+# Guida per gli ospiti – Rabanus Guest House
 
 Guida da consultare sul telefono (si installa come un'app), in 21 lingue europee, scaricabile in PDF con il QR code in copertina.
 
@@ -16,6 +16,14 @@ Un numero di telefono che inizia con + va scritto con l'apostrofo davanti: `'+39
 Le sezioni con id `wifi`, `dove`, `contatti` ed `emergenze` mostrano in più i pulsanti presi da Impostazioni (copia password, apri in Maps, chiama, WhatsApp, 112).
 
 Il foglio deve essere condiviso con «Chiunque abbia il link – Visualizzatore», altrimenti la guida non riesce a leggerlo.
+
+## Stile
+
+Nella scheda Impostazioni, sotto STILE: foto di copertina, logo, font dei titoli e dei testi (qualsiasi nome di fonts.google.com), sei colori (in esadecimale, es. `#c2553d`), forma dei pulsanti (pillola, arrotondata, squadrata) e colonne (1 o 2). Lasciando vuoto si usa lo stile predefinito. Per cambiamenti più profondi c'è `stile.css`.
+
+## Cartello per la camera
+
+Indirizzo della guida seguito da `#/cartello` (es. https://rabanus.it/guida/#/cartello): QR code, invito in più lingue e WiFi, da stampare. Il QR punta al valore `link` di Impostazioni.
 
 ## Pubblicazione
 

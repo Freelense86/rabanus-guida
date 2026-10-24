@@ -1,6 +1,6 @@
 // Tiene in memoria i file della guida, così si apre anche senza connessione.
 // I contenuti del foglio Google li salva invece app.js.
-const CACHE = 'guida-v1';
+const CACHE = 'guida-v2';
 const FILE = ['./', 'index.html', 'stile.css', 'app.js', 'config.js', 'lingue.js', 'icone.js', 'esempio.json', 'icona.svg', 'manifest.webmanifest'];
 
 self.addEventListener('install', e => {

@@ -113,6 +113,45 @@
     }
   }
 
+  // ---------- stile scelto in Impostazioni ----------
+
+  const COLORI = {
+    colore_sfondo: '--fondo', colore_schede: '--carta', colore_bordi: '--bordo',
+    colore_titoli: '--verde', colore_testo: '--testo', colore_icone: '--accento', colore: '--accento'
+  };
+  const FORME = {
+    pillola: { '--raggio': '999px', '--raggio-schede': '22px', '--raggio-bollo': '50%' },
+    arrotondata: { '--raggio': '14px', '--raggio-schede': '16px', '--raggio-bollo': '14px' },
+    squadrata: { '--raggio': '3px', '--raggio-schede': '4px', '--raggio-bollo': '4px' }
+  };
+
+  // carica un font da Google Fonts; se non ha i pesi 400/700 riprova con quello base
+  function caricaFont(nome) {
+    const base = 'https://fonts.googleapis.com/css2?family=' + encodeURIComponent(nome).replace(/%20/g, '+');
+    const link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = base + ':wght@400;700&display=swap';
+    link.onerror = () => { link.onerror = null; link.href = base + '&display=swap'; };
+    document.head.appendChild(link);
+  }
+
+  function applicaStile(i) {
+    const root = document.documentElement.style;
+    for (const k in COLORI) if (/^#[0-9a-f]{3,8}$/i.test(i[k] || '')) root.setProperty(COLORI[k], i[k]);
+    const forma = FORME[(i.forma || '').toLowerCase()];
+    if (forma) for (const k in forma) root.setProperty(k, forma[k]);
+    const riserva = ', system-ui, -apple-system, "Segoe UI", sans-serif';
+    const caricati = new Set(['Plus Jakarta Sans']);
+    [['font_titoli', '--font-titoli'], ['font_testo', '--font-testo']].forEach(([k, v]) => {
+      const nome = (i[k] || '').replace(/["<>;]/g, '').trim();
+      if (!nome) return;
+      if (!caricati.has(nome)) { caricaFont(nome); caricati.add(nome); }
+      root.setProperty(v, `"${nome}"${riserva}`);
+    });
+    if (i.colonne === '1') document.body.classList.add('una-colonna');
+    if (i.colore_sfondo) document.querySelector('meta[name=theme-color]').content = i.colore_sfondo;
+  }
+
   // ---------- lingua ----------
 
   function scegliLinguaIniziale() {
@@ -161,6 +200,7 @@
     return `
       <header class="copertina${i.foto ? ' con-foto' : ''}"${foto}>
         <div class="in-alto">${pulsanteLingua()}</div>
+        ${i.logo ? `<img class="logo" src="${esc(i.logo)}" alt="">` : ''}
         <p class="occhiello">${esc(s('guida'))}</p>
         <h1>${esc(i.nome || '')}</h1>
         ${i.localita ? `<p class="localita">${icona('posizione')}${esc(i.localita)}</p>` : ''}
@@ -236,8 +276,42 @@
     return n ? `<a class="pillola" href="#/${encodeURIComponent(n.id)}">${icona(n.icona || n.id)}<span>${esc(t(n.titolo))}</span>${icona('freccia', 'ico freccia')}</a>` : '';
   }
 
+  // cartello da stampare e lasciare in camera: indirizzo #/cartello, non compare tra le sezioni
+  function cartello() {
+    const i = imp();
+    const saluti = ['it', 'en', 'de', 'fr', 'es'].filter(l => dati.lingue.includes(l)).map(l => STR[l].qr);
+    return `
+      <div class="non-stampare barra">
+        <a class="chip" href="#/">${icona('indietro')}<span>${esc(s('indietro'))}</span></a>
+        <button class="pulsante" onclick="print()">${icona('pdf')}${esc(s('pdf'))}</button>
+      </div>
+      <section class="cartello">
+        ${i.logo ? `<img class="logo" src="${esc(i.logo)}" alt="">` : ''}
+        <p class="occhiello">${dati.lingue.slice(0, 3).map(l => esc(STR[l].guida)).join(' · ')}</p>
+        <h1>${esc(i.nome || '')}</h1>
+        <div id="cartello-qr"></div>
+        <ul class="saluti">${saluti.map(x => `<li>${esc(x)}</li>`).join('')}</ul>
+        ${i.wifi_nome ? `<div class="cartello-wifi">${icona('wifi')}<div><small>WiFi</small><strong>${esc(i.wifi_nome)}</strong>${i.wifi_password ? `<small>${esc(s('password'))}</small><strong>${esc(i.wifi_password)}</strong>` : ''}</div></div>` : ''}
+        <p class="cartello-link">${esc((i.link || location.origin + location.pathname).replace(/^https?:\/\//, ''))}</p>
+      </section>`;
+  }
+
+  async function qr(contenitore, testo, lato) {
+    try {
+      await caricaQR();
+      const colore = getComputedStyle(document.documentElement).getPropertyValue('--verde').trim() || '#3f5e4f';
+      new QRCode(contenitore, { text: testo, width: lato, height: lato, colorDark: colore, colorLight: '#ffffff' });
+    } catch (e) { console.warn('QR non disponibile', e); }
+  }
+
   function mostra() {
     const id = decodeURIComponent(location.hash.replace(/^#\/?/, ''));
+    document.body.classList.toggle('pagina-cartello', id === 'cartello');
+    if (id === 'cartello') {
+      app.innerHTML = cartello();
+      qr(document.getElementById('cartello-qr'), imp().link || location.origin + location.pathname, 240);
+      return;
+    }
     const x = id && dati.sezioni.find(z => z.id === id);
     app.innerHTML = x ? sezione(x) : home();
     document.title = (x ? t(x.titolo) + ' · ' : '') + (imp().nome || s('guida'));
@@ -282,10 +356,7 @@
           ${luoghi.map(l => `<div class="st-luogo"><h3>${esc(l.nome)}</h3>${l.indirizzo ? `<p class="dove">${esc(l.indirizzo)}${l.telefono ? ' · ' + esc(l.telefono) : ''}</p>` : ''}${formatta(t(l.testo))}</div>`).join('')}
         </section>`;
       }).join('')}`;
-    try {
-      await caricaQR();
-      new QRCode(document.getElementById('st-qr'), { text: link, width: 160, height: 160, colorDark: '#3f5e4f', colorLight: '#ffffff' });
-    } catch (e) { console.warn('QR non disponibile', e); }
+    await qr(document.getElementById('st-qr'), link, 160);
     setTimeout(() => window.print(), 300);
   }
 
@@ -316,7 +387,7 @@
 
   carica().then(d => {
     dati = d;
-    if (imp().colore) document.documentElement.style.setProperty('--accento', imp().colore);
+    applicaStile(imp());
     lingua = scegliLinguaIniziale();
     document.documentElement.lang = lingua;
     mostra();

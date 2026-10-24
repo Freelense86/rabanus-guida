@@ -1,88 +1,268 @@
 {
   "impostazioni": {
-    "nome": "Il tuo B&B",
+    "nome": "Rabanus Guest House",
     "localita": "Centro storico",
     "indirizzo": "Via Roma 1, 00100 Città",
     "telefono": "+39 333 123 4567",
     "whatsapp": "+39 333 123 4567",
-    "email": "info@iltuobnb.it",
-    "wifi_nome": "BnB-Ospiti",
+    "email": "info@rabanus.it",
+    "wifi_nome": "Rabanus-Ospiti",
     "wifi_password": "benvenuti2026",
-    "lingue": "it, en, fr, de, es"
+    "lingue": "it, en, fr, de, es",
+    "link": "https://rabanus.it/guida/"
   },
   "sezioni": [
-    { "id": "benvenuto", "ordine": 1, "icona": "casa",
-      "titolo": { "it": "Benvenuto", "en": "Welcome" },
+    {
+      "id": "benvenuto",
+      "ordine": 1,
+      "icona": "casa",
+      "titolo": {
+        "it": "Benvenuto",
+        "en": "Welcome"
+      },
       "testo": {
         "it": "Siamo felici di averti qui! In questa guida trovi tutto quello che serve per il tuo soggiorno: come entrare, il WiFi, i nostri consigli su dove mangiare e cosa vedere.\n\nPer qualsiasi cosa scrivici su WhatsApp: rispondiamo sempre.",
-        "en": "We're happy to have you here! This guide has everything you need for your stay: how to get in, the WiFi, and our tips on where to eat and what to see.\n\nFor anything at all, message us on WhatsApp: we always reply." } },
-    { "id": "checkin", "ordine": 2, "icona": "chiave",
-      "titolo": { "it": "Check-in", "en": "Check-in" },
+        "en": "We're happy to have you here! This guide has everything you need for your stay: how to get in, the WiFi, and our tips on where to eat and what to see.\n\nFor anything at all, message us on WhatsApp: we always reply."
+      }
+    },
+    {
+      "id": "checkin",
+      "ordine": 2,
+      "icona": "chiave",
+      "titolo": {
+        "it": "Check-in",
+        "en": "Check-in"
+      },
       "testo": {
         "it": "Il check-in è dalle **15:00** alle **20:00**. Se arrivi più tardi avvisaci per tempo.\n\n- Il portone si apre con il codice che ti mandiamo il giorno dell'arrivo\n- La tua camera è al primo piano\n- Le chiavi sono nella cassetta accanto alla porta",
-        "en": "Check-in is from **3:00 pm** to **8:00 pm**. If you arrive later, please let us know in advance.\n\n- The front door opens with the code we send you on arrival day\n- Your room is on the first floor\n- The keys are in the box next to the door" } },
-    { "id": "wifi", "ordine": 3, "icona": "wifi",
-      "titolo": { "it": "WiFi", "en": "WiFi" },
-      "testo": { "it": "Il WiFi è gratuito e copre tutta la casa.", "en": "WiFi is free and covers the whole house." } },
-    { "id": "regole", "ordine": 4, "icona": "regole",
-      "titolo": { "it": "Regole della casa", "en": "House rules" },
+        "en": "Check-in is from **3:00 pm** to **8:00 pm**. If you arrive later, please let us know in advance.\n\n- The front door opens with the code we send you on arrival day\n- Your room is on the first floor\n- The keys are in the box next to the door"
+      }
+    },
+    {
+      "id": "wifi",
+      "ordine": 3,
+      "icona": "wifi",
+      "titolo": {
+        "it": "WiFi",
+        "en": "WiFi"
+      },
+      "testo": {
+        "it": "Il WiFi è gratuito e copre tutta la casa.",
+        "en": "WiFi is free and covers the whole house."
+      }
+    },
+    {
+      "id": "regole",
+      "ordine": 4,
+      "icona": "regole",
+      "titolo": {
+        "it": "Regole della casa",
+        "en": "House rules"
+      },
       "testo": {
         "it": "- Silenzio dalle 23:00 alle 8:00\n- Non si fuma all'interno\n- Raccolta differenziata: trovi i contenitori in cucina\n- Animali ammessi su richiesta",
-        "en": "- Quiet hours from 11:00 pm to 8:00 am\n- No smoking indoors\n- Please separate your waste: bins are in the kitchen\n- Pets allowed on request" } },
-    { "id": "dove", "ordine": 5, "icona": "posizione",
-      "titolo": { "it": "Dove siamo", "en": "Where we are" },
-      "testo": { "it": "Siamo nel cuore del centro storico, a 5 minuti a piedi dalla piazza principale.", "en": "We're in the heart of the old town, a 5-minute walk from the main square." } },
-    { "id": "trasporti", "ordine": 6, "icona": "trasporti",
-      "titolo": { "it": "Trasporti", "en": "Getting around" },
+        "en": "- Quiet hours from 11:00 pm to 8:00 am\n- No smoking indoors\n- Please separate your waste: bins are in the kitchen\n- Pets allowed on request"
+      }
+    },
+    {
+      "id": "dove",
+      "ordine": 5,
+      "icona": "posizione",
+      "titolo": {
+        "it": "Dove siamo",
+        "en": "Where we are"
+      },
+      "testo": {
+        "it": "Siamo nel cuore del centro storico, a 5 minuti a piedi dalla piazza principale.",
+        "en": "We're in the heart of the old town, a 5-minute walk from the main square."
+      }
+    },
+    {
+      "id": "trasporti",
+      "ordine": 6,
+      "icona": "trasporti",
+      "titolo": {
+        "it": "Trasporti",
+        "en": "Getting around"
+      },
       "testo": {
         "it": "**Autobus**: la fermata è a 100 metri, linea 1 per la stazione.\n\n**Taxi**: chiamaci e te lo prenotiamo noi.\n\n**Parcheggio**: gratuito in via Garibaldi, a 3 minuti a piedi.",
-        "en": "**Bus**: the stop is 100 metres away, line 1 to the station.\n\n**Taxi**: call us and we'll book one for you.\n\n**Parking**: free in Via Garibaldi, a 3-minute walk." } },
-    { "id": "dotazioni", "ordine": 7, "icona": "dotazioni",
-      "titolo": { "it": "Dotazioni", "en": "Amenities" },
+        "en": "**Bus**: the stop is 100 metres away, line 1 to the station.\n\n**Taxi**: call us and we'll book one for you.\n\n**Parking**: free in Via Garibaldi, a 3-minute walk."
+      }
+    },
+    {
+      "id": "dotazioni",
+      "ordine": 7,
+      "icona": "dotazioni",
+      "titolo": {
+        "it": "Dotazioni",
+        "en": "Amenities"
+      },
       "testo": {
         "it": "- Aria condizionata e riscaldamento\n- Asciugacapelli e set di cortesia\n- Macchina del caffè e bollitore\n- Ferro da stiro su richiesta",
-        "en": "- Air conditioning and heating\n- Hairdryer and toiletries\n- Coffee machine and kettle\n- Iron on request" } },
-    { "id": "vedere", "ordine": 8, "icona": "stella",
-      "titolo": { "it": "Da vedere", "en": "Things to see" },
-      "testo": { "it": "I posti che consigliamo ai nostri ospiti:", "en": "The places we recommend to our guests:" } },
-    { "id": "ristoranti", "ordine": 9, "icona": "ristoranti",
-      "titolo": { "it": "Ristoranti", "en": "Restaurants" },
-      "testo": { "it": "Dove mangiamo noi, a pochi passi da casa.", "en": "Where we eat ourselves, a few steps from the house." } },
-    { "id": "bar", "ordine": 10, "icona": "bar",
-      "titolo": { "it": "Bar e locali", "en": "Bars & nightlife" },
-      "testo": { "it": "Per la colazione, l'aperitivo o un drink dopo cena.", "en": "For breakfast, an aperitivo or a drink after dinner." } },
-    { "id": "spesa", "ordine": 11, "icona": "spesa",
-      "titolo": { "it": "Spesa e mercati", "en": "Shops & markets" },
-      "testo": { "it": "Il supermercato più vicino è aperto tutti i giorni dalle 8:00 alle 21:00. Il mercato è il sabato mattina in piazza.", "en": "The nearest supermarket is open every day from 8:00 am to 9:00 pm. The market is on Saturday mornings in the square." } },
-    { "id": "info", "ordine": 12, "icona": "info",
-      "titolo": { "it": "Informazioni utili", "en": "Useful information" },
+        "en": "- Air conditioning and heating\n- Hairdryer and toiletries\n- Coffee machine and kettle\n- Iron on request"
+      }
+    },
+    {
+      "id": "vedere",
+      "ordine": 8,
+      "icona": "stella",
+      "titolo": {
+        "it": "Da vedere",
+        "en": "Things to see"
+      },
+      "testo": {
+        "it": "I posti che consigliamo ai nostri ospiti:",
+        "en": "The places we recommend to our guests:"
+      }
+    },
+    {
+      "id": "ristoranti",
+      "ordine": 9,
+      "icona": "ristoranti",
+      "titolo": {
+        "it": "Ristoranti",
+        "en": "Restaurants"
+      },
+      "testo": {
+        "it": "Dove mangiamo noi, a pochi passi da casa.",
+        "en": "Where we eat ourselves, a few steps from the house."
+      }
+    },
+    {
+      "id": "bar",
+      "ordine": 10,
+      "icona": "bar",
+      "titolo": {
+        "it": "Bar e locali",
+        "en": "Bars & nightlife"
+      },
+      "testo": {
+        "it": "Per la colazione, l'aperitivo o un drink dopo cena.",
+        "en": "For breakfast, an aperitivo or a drink after dinner."
+      }
+    },
+    {
+      "id": "spesa",
+      "ordine": 11,
+      "icona": "spesa",
+      "titolo": {
+        "it": "Spesa e mercati",
+        "en": "Shops & markets"
+      },
+      "testo": {
+        "it": "Il supermercato più vicino è aperto tutti i giorni dalle 8:00 alle 21:00. Il mercato è il sabato mattina in piazza.",
+        "en": "The nearest supermarket is open every day from 8:00 am to 9:00 pm. The market is on Saturday mornings in the square."
+      }
+    },
+    {
+      "id": "info",
+      "ordine": 12,
+      "icona": "info",
+      "titolo": {
+        "it": "Informazioni utili",
+        "en": "Useful information"
+      },
       "testo": {
         "it": "**Farmacia**: in piazza, aperta fino alle 20:00.\n\n**Tassa di soggiorno**: 2 € a persona a notte, da pagare in contanti all'arrivo.",
-        "en": "**Pharmacy**: in the square, open until 8:00 pm.\n\n**Tourist tax**: €2 per person per night, to be paid in cash on arrival." } },
-    { "id": "emergenze", "ordine": 13, "icona": "emergenze",
-      "titolo": { "it": "Emergenze", "en": "Emergencies" },
-      "testo": { "it": "Il numero unico europeo per le emergenze è il 112 (polizia, ambulanza, vigili del fuoco). Il pronto soccorso più vicino è all'Ospedale Civile.", "en": "The European emergency number is 112 (police, ambulance, fire brigade). The nearest A&E is at the Ospedale Civile." } },
-    { "id": "checkout", "ordine": 14, "icona": "uscita",
-      "titolo": { "it": "Check-out", "en": "Check-out" },
+        "en": "**Pharmacy**: in the square, open until 8:00 pm.\n\n**Tourist tax**: €2 per person per night, to be paid in cash on arrival."
+      }
+    },
+    {
+      "id": "emergenze",
+      "ordine": 13,
+      "icona": "emergenze",
+      "titolo": {
+        "it": "Emergenze",
+        "en": "Emergencies"
+      },
+      "testo": {
+        "it": "Il numero unico europeo per le emergenze è il 112 (polizia, ambulanza, vigili del fuoco). Il pronto soccorso più vicino è all'Ospedale Civile.",
+        "en": "The European emergency number is 112 (police, ambulance, fire brigade). The nearest A&E is at the Ospedale Civile."
+      }
+    },
+    {
+      "id": "checkout",
+      "ordine": 14,
+      "icona": "uscita",
+      "titolo": {
+        "it": "Check-out",
+        "en": "Check-out"
+      },
       "testo": {
         "it": "Il check-out è entro le **10:30**.\n\n- Lascia le chiavi nella cassetta\n- Spegni luci e aria condizionata\n- Chiudi bene il portone\n\nGrazie e buon viaggio! Se ti sei trovato bene, una recensione ci aiuta tantissimo.",
-        "en": "Check-out is by **10:30 am**.\n\n- Leave the keys in the box\n- Turn off the lights and air conditioning\n- Close the front door properly\n\nThank you and safe travels! If you enjoyed your stay, a review helps us a lot." } },
-    { "id": "contatti", "ordine": 15, "icona": "telefono",
-      "titolo": { "it": "Contatti", "en": "Contact us" },
-      "testo": { "it": "Siamo raggiungibili tutti i giorni dalle 8:00 alle 22:00. Per urgenze anche di notte.", "en": "You can reach us every day from 8:00 am to 10:00 pm, and at night for emergencies." } }
+        "en": "Check-out is by **10:30 am**.\n\n- Leave the keys in the box\n- Turn off the lights and air conditioning\n- Close the front door properly\n\nThank you and safe travels! If you enjoyed your stay, a review helps us a lot."
+      }
+    },
+    {
+      "id": "contatti",
+      "ordine": 15,
+      "icona": "telefono",
+      "titolo": {
+        "it": "Contatti",
+        "en": "Contact us"
+      },
+      "testo": {
+        "it": "Siamo raggiungibili tutti i giorni dalle 8:00 alle 22:00. Per urgenze anche di notte.",
+        "en": "You can reach us every day from 8:00 am to 10:00 pm, and at night for emergencies."
+      }
+    }
   ],
   "luoghi": [
-    { "sezione": "ristoranti", "nome": "Trattoria da Maria", "indirizzo": "Via Garibaldi 12", "telefono": "+39 000 000 0000",
-      "testo": { "it": "Cucina di casa, porzioni abbondanti. Prova la pasta fatta in casa.", "en": "Home cooking, generous portions. Try the homemade pasta." } },
-    { "sezione": "ristoranti", "nome": "Pizzeria Il Forno", "indirizzo": "Piazza Duomo 3",
-      "testo": { "it": "Pizza nel forno a legna, aperta anche a pranzo.", "en": "Wood-fired pizza, also open for lunch." } },
-    { "sezione": "bar", "nome": "Caffè Centrale", "indirizzo": "Piazza Duomo 1",
-      "testo": { "it": "Ottimi cornetti al mattino, aperitivo al tramonto.", "en": "Great croissants in the morning, aperitivo at sunset." } },
-    { "sezione": "vedere", "nome": "Duomo", "indirizzo": "Piazza Duomo",
-      "testo": { "it": "La cattedrale, con il campanile da cui si vede tutta la città. Ingresso gratuito.", "en": "The cathedral, with a bell tower that overlooks the whole town. Free entry." } },
-    { "sezione": "vedere", "nome": "Belvedere", "indirizzo": "Via Panoramica",
-      "testo": { "it": "Il punto più bello per il tramonto, a 10 minuti a piedi.", "en": "The best spot for the sunset, a 10-minute walk." } },
-    { "sezione": "spesa", "nome": "Supermercato", "indirizzo": "Via Roma 40",
-      "testo": { "it": "Aperto tutti i giorni 8:00–21:00.", "en": "Open every day 8:00 am–9:00 pm." } }
+    {
+      "sezione": "ristoranti",
+      "nome": "Trattoria da Maria",
+      "indirizzo": "Via Garibaldi 12",
+      "telefono": "+39 000 000 0000",
+      "testo": {
+        "it": "Cucina di casa, porzioni abbondanti. Prova la pasta fatta in casa.",
+        "en": "Home cooking, generous portions. Try the homemade pasta."
+      }
+    },
+    {
+      "sezione": "ristoranti",
+      "nome": "Pizzeria Il Forno",
+      "indirizzo": "Piazza Duomo 3",
+      "testo": {
+        "it": "Pizza nel forno a legna, aperta anche a pranzo.",
+        "en": "Wood-fired pizza, also open for lunch."
+      }
+    },
+    {
+      "sezione": "bar",
+      "nome": "Caffè Centrale",
+      "indirizzo": "Piazza Duomo 1",
+      "testo": {
+        "it": "Ottimi cornetti al mattino, aperitivo al tramonto.",
+        "en": "Great croissants in the morning, aperitivo at sunset."
+      }
+    },
+    {
+      "sezione": "vedere",
+      "nome": "Duomo",
+      "indirizzo": "Piazza Duomo",
+      "testo": {
+        "it": "La cattedrale, con il campanile da cui si vede tutta la città. Ingresso gratuito.",
+        "en": "The cathedral, with a bell tower that overlooks the whole town. Free entry."
+      }
+    },
+    {
+      "sezione": "vedere",
+      "nome": "Belvedere",
+      "indirizzo": "Via Panoramica",
+      "testo": {
+        "it": "Il punto più bello per il tramonto, a 10 minuti a piedi.",
+        "en": "The best spot for the sunset, a 10-minute walk."
+      }
+    },
+    {
+      "sezione": "spesa",
+      "nome": "Supermercato",
+      "indirizzo": "Via Roma 40",
+      "testo": {
+        "it": "Aperto tutti i giorni 8:00–21:00.",
+        "en": "Open every day 8:00 am–9:00 pm."
+      }
+    }
   ]
 }

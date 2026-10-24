@@ -1,6 +1,6 @@
 {
-  "name": "Guida per gli ospiti",
-  "short_name": "Guida",
+  "name": "Rabanus Guest House",
+  "short_name": "Rabanus",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
