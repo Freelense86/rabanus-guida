@@ -29,7 +29,7 @@ Indirizzo della guida seguito da `#/cartello` (es. https://rabanus.it/guida/#/ca
 
 La guida è pubblicata con GitHub Pages dal ramo `main` di questo repository: ogni modifica caricata su GitHub va online da sola in un paio di minuti. I contenuti invece arrivano direttamente dal foglio, senza bisogno di ripubblicare.
 
-Indirizzo: https://freelense86.github.io/rabanus-guida/ (poi guida.rabanus.it, con un record DNS CNAME `guida` → `freelense86.github.io` e il file `CNAME` nel repository).
+Indirizzo: https://guida.rabanus.it/ — record DNS su Cloudflare: CNAME `guida` → `freelense86.github.io`, «DNS only» (nuvoletta grigia), più il file `CNAME` nel repository. Il vecchio indirizzo freelense86.github.io/rabanus-guida/ rimanda qui.
 
 L'ID del foglio è in `config.js`. Senza ID la guida mostra i contenuti di `esempio.json`.
 
